@@ -63,6 +63,12 @@ body {
     border: 0px;
 }
 
+.actionn {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+}
+
 .form .update {
     margin-top: 50px;
     width: 200px;
@@ -73,6 +79,22 @@ body {
     padding: 15px 25px 15px 25px;
     border-radius: 5px;
     border: 0px;
+}
+
+.form .deleteGambar {
+  margin-top: 50px;
+  width: 200px;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  background-color: #ff0000;
+  padding: 15px 25px 15px 25px;
+  border-radius: 5px;
+  border: 0px;
+}
+
+.form img {
+  width: 100px;
 }
 
 @media only screen and (max-width: 1279px) {

@@ -316,6 +316,15 @@ tr:nth-child(odd) {
   margin-left: 10px;
 }
 
+table tr .gambarTabel img{
+  width: 100px;
+}
+
+.barangDisewa {
+  width: 150px;
+
+}
+
 @media only screen and (max-width: 1800px) {
   .data1,
   .data2,

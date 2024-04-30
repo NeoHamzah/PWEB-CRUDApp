@@ -1,5 +1,5 @@
 <?php 
-require "transaksi.php";
+require 'transaksi.php';
 
 $id = $_GET['id'];
 
@@ -17,6 +17,6 @@ if (Transaksi::delete($id) > 0) {
             document.location.href = 'dashboard.php'
         </script>
     ";
-}
+} 
 
 ?>

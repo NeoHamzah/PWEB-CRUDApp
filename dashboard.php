@@ -102,6 +102,7 @@ $transaksi = Transaksi::select();
             <th>Barang Disewa</th>
             <th>Jumlah Harga</th>
             <th>Nomor Telepon</th>
+            <th>Struk</th>
             <th>Aksi</th>
           </tr>
 
@@ -113,9 +114,10 @@ $transaksi = Transaksi::select();
               <td><?= $i ?></td>
               <td><?= $row['tanggal_transaksi'] ?></td>
               <td><?= $row['nama_penyewa'] ?></td>
-              <td><?= $row['barang_disewa'] ?></td>
+              <td class="barangDisewa" ><?= $row['barang_disewa'] ?></td>
               <td><?= $row['jumlah_harga'] ?></td>
               <td><?= $row['nomor_telepon'] ?></td>
+              <td class="gambarTabel"><img src="img/struk/<?= $row['gambar'] ?>" alt=""></td>
               <td>
                 <a href="updateData.php?id=<?= $row['id_transaksi'] ?>">
                   <button class="edit">
@@ -125,7 +127,7 @@ $transaksi = Transaksi::select();
                   </button>
                 </a>
                 <a href="deleteData.php?id=<?= $row['id_transaksi'] ?>">
-                  <button class="delete">
+                  <button class="delete" onclick="return confirm('Apakah kamu yakin ingin menghapus item ini?')">
                     <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                       <path stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z" />
                     </svg>
@@ -140,6 +142,11 @@ $transaksi = Transaksi::select();
       </div>
     </div>
   </div>
+
+  <script>
+
+
+  </script>
 </body>
 
 </html>
