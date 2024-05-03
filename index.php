@@ -1,5 +1,2 @@
-<?php 
-
-require("auth.php")
-
-?>
+<?php
+include_once 'controller/routes.php';

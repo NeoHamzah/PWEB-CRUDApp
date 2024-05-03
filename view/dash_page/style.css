@@ -13,8 +13,81 @@ body {
   flex-direction: row;
 }
 
-.container {
-  width: 100%;
+.sidebar {
+  background-color: #2d9596;
+  width: 13vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: sticky;
+  top: 0;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: whitesmoke;
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 10px 0px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.sidebar a p {
+  margin-bottom: 0px;
+}
+
+.flex-left {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.sidebar-subitems {
+  margin-top: 100px;
+}
+
+.sidebar-logout,
+.sidebar-dashboard,
+.sidebar-profile {
+  width: 8.5vw;
+}
+
+.sidebar-logout {
+  position: absolute;
+  bottom: 50px;
+}
+
+.sidebar-subitems svg {
+  margin-left: 12px;
+}
+
+.sidebar-subitems .active {
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 8.5vw;
+  border-radius: 10px;
+}
+
+.sidebar-subitems > * {
+  transition: all 0.1s;
+}
+
+.sidebar-subitems > *:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 8.5vw;
+  border-radius: 10px;
+}
+
+.container-content {
+  width: 90vw;
+  height: max-content;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -32,12 +105,22 @@ body {
   align-items: center;
 }
 
+
+
 .con-detail {
   color: #2d9596;
   margin-left: 20px;
   display: flex;
   flex-direction: column;
   gap: 5px;
+}
+
+.con-detail p, .con-detail h1 {
+  margin-bottom: 0px;
+}
+
+.con-detail h1 {
+  font-weight: 700;
 }
 
 .con-profile a {
@@ -47,6 +130,11 @@ body {
   align-items: center;
   gap: 15px;
   text-decoration: none;
+}
+
+.con-profile h3 {
+  font-size: 20px;
+  font-weight: 700;
 }
 
 .con-profile img {
@@ -192,6 +280,16 @@ body {
   border-radius: 50%;
 }
 
+.container-mid h2, .container-bottom h2 {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.data1-detail h2, .data2-detail h2, .data3-detail h2, .data4-detail h2 {
+  font-size: 24px;
+  font-weight: 700;
+} 
+
 .container-bottom {
   height: fit-content;
   width: 98%;
@@ -325,6 +423,93 @@ table tr .gambarTabel img{
 
 }
 
+.container-form {
+  margin: 20px;
+  margin-top: 30px;
+  background-color: white;
+  width: 96%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 20px;
+  margin-bottom: 30px;
+}
+
+.container-form h1 {
+  font-weight: 700;
+  margin-top: 20px;
+  color: #2d9596;
+}
+
+.form {
+  font-size: 16px;
+  font-weight: 600;
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  margin: 30px 10px;
+}
+
+.form input {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding: 15px 10px;
+  background-color: whitesmoke;
+  border: 3px solid #2d9596;
+}
+
+.form input:focus {
+    outline: none;
+}
+
+.form .create {
+    margin-top: 50px;
+    width: 200px;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    background-color: #00ce45;
+    padding: 15px 25px 15px 25px;
+    border-radius: 5px;
+    border: 0px;
+}
+
+.actionn {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+}
+
+.form .update {
+    margin-top: 50px;
+    width: 200px;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    background-color: #ff9100;
+    padding: 15px 25px 15px 25px;
+    border-radius: 5px;
+    border: 0px;
+}
+
+.form .deleteGambar {
+  margin-top: 50px;
+  width: 200px;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  background-color: #ff0000;
+  padding: 15px 25px 15px 25px;
+  border-radius: 5px;
+  border: 0px;
+}
+
+.form img {
+  width: 100px;
+}
+
+
 @media only screen and (max-width: 1800px) {
   .data1,
   .data2,
@@ -362,6 +547,46 @@ table tr .gambarTabel img{
 
   .tabel .delete {
     margin-right: 5px;
+  }
+
+  .sidebar {
+    width: 8vw;
+    padding: 10px;
+    height: 100vh;
+    display: flex;
+  }
+
+  .sidebar-subitems p {
+    display: none;
+  }
+
+  .sidebar-subitems svg {
+    margin: 0px;
+  }
+
+  .sidebar-logout,
+  .sidebar-dashboard,
+  .sidebar-profile {
+    width: 5vw;
+  }
+
+  .flex-left {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sidebar-subitems .active {
+    width: 5vw;
+  }
+
+  .sidebar-subitems > *:hover {
+    width: 5vw;
+  }
+
+  .sidebar-subitems .sidebar-logout {
+    right: 0;
+    left: 0;
+    margin: auto;
   }
 }
 
@@ -424,4 +649,78 @@ table tr .gambarTabel img{
   .tabel .delete {
     margin: 10px 0px;
   }
+
+  .sidebar {
+    top: auto;
+    bottom: 0;
+    display: flex;
+    width: 100vw;
+    position: fixed;
+    height: 8vh;
+    justify-content: center;
+    align-items: center;
+    z-index: 99;
+  }
+
+  .sidebar-subitems {
+    display: flex;
+    margin-top: 0px;
+    height: fit-content;
+    flex-direction: row;
+    gap: 70px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .sidebar a {
+    margin: 0;
+    flex-direction: column;
+  }
+
+  .flex-left {
+    margin: 0;
+  }
+
+  .sidebar-logout {
+    position: static;
+    left: auto;
+    right: auto;
+    bottom: 0;
+  }
+
+  .sidebar-subitems .active {
+    width: 70px;
+    padding: 10px;
+  }
+
+  .sidebar-subitems > *:hover {
+    width: 70px;
+    padding: 10px;
+  }
+
+  .sidebar-subitems .sidebar-logout:hover {
+    margin: 0;
+  }
+
+  .sidebar-subitems svg {
+    margin-left: 0px;
+  }
+
+  .sidebar-logout,
+  .sidebar-dashboard,
+  .sidebar-profile {
+    width: 70px;
+    padding: 10px;
+  }
+
+  .container h1 {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .form .create, .form .update {
+    margin: auto;
+    margin-top: 20px;
+  }
 }
+

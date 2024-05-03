@@ -1,5 +1,6 @@
 <?php
-require_once 'database.php';
+
+include_once 'config/conn.php';
 
 class Transaksi
 {
@@ -30,7 +31,6 @@ class Transaksi
         }
         return $data;
     }
-
     static function create($data)
     {
         global $conn;
@@ -98,9 +98,10 @@ class Transaksi
         }
     }
 
-    static function update($id_transaksi, $data)
+    static function update($data)
     {
         global $conn;
+        $id = htmlspecialchars($data['id_transaksi']);
         $tanggal_transaksi = htmlspecialchars($data['tanggal_transaksi']); 
         $nama_penyewa = htmlspecialchars($data['nama_penyewa']);
         $barang_disewa = htmlspecialchars($data['barang_disewa']);
@@ -119,8 +120,8 @@ class Transaksi
             return false;
         }
 
-        $stmt = $conn->prepare("UPDATE transaksi set tanggal_transaksi=?, nama_penyewa=?, barang_disewa=?, jumlah_harga=?, nomor_telepon=?, gambar=? WHERE id_transaksi=" . $id_transaksi);
-        $stmt->bind_param("sssiss", $tanggal_transaksi, $nama_penyewa, $barang_disewa, $jumlah_harga, $nomor_telepon, $gambar);
+        $stmt = $conn->prepare("UPDATE transaksi set tanggal_transaksi=?, nama_penyewa=?, barang_disewa=?, jumlah_harga=?, nomor_telepon=?, gambar=? WHERE id_transaksi=?");
+        $stmt->bind_param("sssissi", $tanggal_transaksi, $nama_penyewa, $barang_disewa, $jumlah_harga, $nomor_telepon, $gambar, $id);
         $stmt->execute();
         $result = $stmt->affected_rows > 0 ? true : false;
         $stmt->close();
