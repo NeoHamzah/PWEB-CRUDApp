@@ -1,29 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style/auth.css" />
-    <title>Sewa Kamera</title>
-  </head>
-
-  <body>
-    <div class="container" id="container">
+<div class="container" id="container">
       <div class="container-form register">
-        <form action="auth.php">
+        <form action="<?= urlpath('register') ?>" method="post">
           <h1>Register Akun</h1>
-          <input type="text" placeholder="Nama" />
-          <input type="email" placeholder="Email" />
-          <input type="password" placeholder="Password" />
+          <input type="text" placeholder="Nama Lengkap" name="nama_lengkap" />
+          <input type="text" placeholder="Username" name="username" />
+          <input type="password" placeholder="Password" name="password" />
           <button>Register</button>
         </form>
       </div>
       <div class="container-form login">
-        <form action="dashboard.php">
+        <form action="<?= urlpath('login') ?>" method="post">
           <h1>Login Akun</h1>
-          <input type="email" placeholder="Email" />
-          <input type="password" placeholder="Password" />
-          <a href="#">Lupa Password Anda?</a>
+          <input type="text" placeholder="Username" name="username" />
+          <input type="password" placeholder="Password" name="password" />
           <button>Login</button>
         </form>
       </div>
@@ -56,5 +45,3 @@
         container.classList.remove('active');
       });
     </script>
-  </body>
-</html>

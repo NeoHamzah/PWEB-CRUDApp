@@ -7,8 +7,6 @@ function view($page, $data=[]) {
 class Router { 
     public static $urls = [];
 
-    
-
     function __construct() {
         $url = implode("/", 
             array_filter(
